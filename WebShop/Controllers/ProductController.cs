@@ -3,15 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebShop.Services;
 
 namespace WebShop.Controllers
 {
     public class ProductController : Controller
     {
-        // GET: Product
+
+        private ProductServices productServices;
+
+        public ProductController()
+        {
+            productServices = new ProductServices();
+        }
+
+        // GET: Product/Index
         public ActionResult Index()
         {
-            return View();
+            var items = productServices.GetAll();
+            return View(items);
         }
     }
 }
