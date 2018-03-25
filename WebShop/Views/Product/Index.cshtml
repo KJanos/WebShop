@@ -2,6 +2,22 @@
 @{
     ViewBag.Title = "Index";
 }
+<style type="text/css">
+   .block2 {
+        width: 200px;
+        height: 200px;
+        background: #ccc;
+        padding: 5px;
+        padding-right: 20px;
+        border: solid 1px black;
+        float: left;
+    }
+    .Price {
+        display: inline-block;
+        float: right;
+        vertical-align: bottom;
+    }
+    </style>
 
 <h2>Продукты</h2>
 
@@ -22,5 +38,16 @@
         </tr>
         }
     </table>
+
+    <div class ="block">
+        @foreach (var p in Model)
+        {
+            <div class="block2" >
+               <h3> @p.Name </h3>
+               <h6> @p.Description</h6> <br />
+               <div class="Price"><h5>@p.Price ₴</h5></div>
+            </div>
+        }
+    </div>
     <br />
 </div>

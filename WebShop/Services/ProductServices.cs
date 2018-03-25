@@ -15,9 +15,9 @@ namespace WebShop.Services
             if (products == null)
             products = new List<Product>
             {
-                new Product{Name = "Jeans", Price = 680},
-                new Product{Name = "Shirt", Price = 300},
-                new Product{Name = "Top", Price = 450}
+                new Product{Name = "Asus VivoBook 1578", Price = 11680, Description = "CPU: Intel Core i3-7200, RAM: 6gb, Video: GT940MX"},
+                new Product{Name = "HP Pavilion G6-2076sr", Price = 7800, Description = "CPU: Intel Core i5-3210M, RAM: 6gb, Video: 7670M"},
+                new Product{Name = "ACER", Price = 4500, Description= "CPU: Intel Core N7100, RAM: 4gb, Video: Intel HD"}
             };
         }
 
