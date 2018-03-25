@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebShop.Models;
 using WebShop.Services;
 
 namespace WebShop.Controllers
@@ -22,6 +23,23 @@ namespace WebShop.Controllers
         {
             var items = productServices.GetAll();
             return View(items);
+        }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(Product model)
+        {
+            if (ModelState.IsValid)
+            {
+                productServices.AddProduct(model);
+                return RedirectToAction("Index");
+            }
+
+            return View(model);
         }
     }
 }
