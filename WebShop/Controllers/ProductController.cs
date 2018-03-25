@@ -41,5 +41,11 @@ namespace WebShop.Controllers
 
             return View(model);
         }
+
+        public ActionResult Delete(string name)
+        {
+            productServices.DeleteByName(name);
+            return RedirectToAction("Index");
+        }
     }
 }
